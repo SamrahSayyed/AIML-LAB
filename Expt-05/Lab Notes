@@ -1,0 +1,23 @@
+Problem Statement: Bank Loan Approval
+Imagine you are a credit officer at a bank. You need an automated way to decide whether a loan application should be Approved or Denied based on two criteria: Credit Score and Annual Income.
+
+A Decision Tree works by splitting the data into branches based on these features, creating a flowchart-like structure to reach a final classification (the "leaves").
+
+The Python Implementation
+We use the DecisionTreeClassifier from scikit-learn.
+
+Expected Output:
+The model creates "if-then" splits. For instance, it might first check if the Credit Score is above 580, then check if Income is above $35k.
+Console Output:Loan Status for Applicant (610, $40k): Approved
+Decision Tree Logic:|--- Credit Score <= 575.00|   |--- class: 0
+                    |--- Credit Score >  575.00|  
+                    |--- Income <= 27.50|   
+                    |   |--- class: 0|   
+                    |--- Income >  27.50|   
+                    |   |--- class: 1
+
+Understanding the ResultsRoot Node: The tree likely started by splitting at Credit Score. 
+If the score was too low (e.g., $\le 575$), the loan was immediately denied.
+Decision Nodes: For those with decent credit, the tree then looked at Income.
+Entropy/Gini Impurity: The model chooses the splits that "purify" the data most effectively—meaning it tries to group all "Approved" cases together and all "Denied" cases together as quickly as possible.
+The Prediction: Our applicant had a score of 610 (passing the first test) and an income of 40 (passing the second test), resulting in an Approved status.
