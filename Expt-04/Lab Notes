@@ -1,0 +1,16 @@
+Problem Statement: 
+Classifying Fruit 
+Imagine you are building a smart sorting system for a grocery store. You have data on different fruits based on two features: Weight (grams) and Texture Score (1–10). 
+You want to classify a new piece of fruit as either an Orange or a Grapefruit.
+The K-Nearest Neighbors (KNN) algorithm classifies the new fruit by looking at the $k$ closest data points (neighbors) in the feature space and taking a majority vote.
+The Python Implementation
+We use KNeighborsClassifier from scikit-learn. In this example, we set $k=3$.
+Expected Output
+The algorithm calculates the distance between the new point and all existing points to find the three nearest neighbors.
+Console Output:
+Prediction for fruit (220g, Score 6): Grapefruit
+Probability (Orange vs Grapefruit): [0.33333333 0.66666667]
+Understanding the Results
+The Neighbors: Because the new fruit (220g) is physically "closer" in size and texture to the Grapefruit cluster than the Orange cluster, the majority of its 3 nearest neighbors were Grapefruits.
+The Probability: The output [0.33, 0.67] means that among the 3 neighbors, 1 was an Orange ($1/3 \approx 33\%$) and 2 were Grapefruits ($2/3 \approx 67\%$).
+Distance Metric: By default, the model uses Euclidean Distance to determine "closeness":$$d(p, q) = \sqrt{\sum_{i=1}^{n} (q_i - p_i)^2}$$
