@@ -9,7 +9,8 @@ We use the DecisionTreeClassifier from scikit-learn.
 Expected Output:
 The model creates "if-then" splits. For instance, it might first check if the Credit Score is above 580, then check if Income is above $35k.
 Console Output:Loan Status for Applicant (610, $40k): Approved
-Decision Tree Logic:|--- Credit Score <= 575.00|   |--- class: 0
+Decision Tree Logic:|--- Credit Score <= 575.00|   
+                    |--- class: 0
                     |--- Credit Score >  575.00|  
                     |--- Income <= 27.50|   
                     |   |--- class: 0|   
