@@ -1,0 +1,35 @@
+
+Implementing degrees of separation is a classic application of graph theory. In this context, people are nodes and friendships/connections are edges.
+
+While both Breadth-First Search (BFS) and Depth-First Search (DFS) can technically traverse a graph, they behave very differently when it comes to finding the "shortest path" (which is what a degree of separation actually is).
+
+1. Breadth-First Search (BFS)
+BFS is the gold standard for finding degrees of separation. Because it explores neighbors layer-by-layer, the first time you reach a person, you are guaranteed to have found them via the shortest possible path.
+
+The Logic
+Initialize: Create a queue and a visited set to avoid infinite loops.
+
+Track Depth: Store the current person along with their distance from the starting point (e.g., (person, current_depth)).
+
+Process: While the queue isn't empty:
+
+Pop the first person.
+
+If current_depth == k, do not explore their neighbors further (but you can add them to your result list).
+
+If current_depth < k, add all unvisited neighbors to the queue with current_depth + 1.
+
+2. Depth-First Search (DFS)
+DFS is generally not recommended for finding the shortest degree of separation. DFS goes as deep as possible down one branch before backtracking. This means you might find someone at 5 degrees of separation even if they were actually a direct neighbor (1 degree) on a different branch.
+
+The Logic (Iterative or Recursive)
+To make DFS work for "$k$ degrees," you must use Depth-Limited Search:
+
+Base Case: If current_depth > k, stop and backtrack.
+
+Tracking: You must keep track of the shortest distance found for each node. If you reach a node again via a shorter path than previously recorded, you must re-explore it.
+
+Process: Move to a neighbor, increment depth, and repeat until you hit the limit 'k'.
+
+
+
