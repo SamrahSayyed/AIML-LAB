@@ -1,0 +1,26 @@
+Problem Statement: Customer Segmentation
+Imagine you are a marketing manager for an e-commerce site. You have data on customers based on two metrics: Total Spend and Purchase Frequency. 
+You want to group these customers into clusters so you can tailor your marketing strategies (e.g., a loyalty program for frequent spenders vs. discount codes for infrequent ones).
+K-Means Clustering is an unsupervised learning algorithm that groups data points into $k$ clusters by minimizing the distance between the points and the center (centroid) of their assigned cluster.
+The Python Implementation:
+We use KMeans from scikit-learn. In this example, we will organize customers into 3 clusters.
+
+Expected Output:
+The algorithm iteratively moves the "center" of each group until the points are clustered as tightly as possible.
+Console Output:
+Customer Cluster Assignments:
+Customer 1 [100 2] -> Cluster 1
+Customer 4 [5000 20] -> Cluster 0
+Customer 7 [2000 50] -> Cluster 2(...and so on for all points)
+
+Cluster Center Locations (Centroids):
+[[5233.33  22.33]  <-- The "High Spender" Center[ 123.33   2.33]  <-- The "Low Spender" Center
+[2000.    47.66]] <-- The "Frequent" Center
+
+
+Understanding the Results:
+Unsupervised Learning: 
+Notice we didn't give the model "correct answers" (labels). It found the groups on its own based solely on the distance between points.
+The Centroid: Each cluster is defined by its center point. In the output, the centroid [5233.33, 22.33] represents the "average" VIP customer.
+Choosing K: In this example, we chose $k=3$. In real-world scenarios, you would often use the Elbow Method to determine the optimal number of clusters by plotting the variance against the number of clusters.
+Sensitivity: K-Means can be sensitive to outliers and the initial placement of centroids, which is why it often runs multiple times (defined by n_init) to find the best grouping.
