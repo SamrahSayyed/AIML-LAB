@@ -1,0 +1,17 @@
+Problem Statement: Predicting House Prices
+Imagine you are a real estate analyst. You want to understand the relationship between the Square Footage of a house and its Sale Price. 
+Based on historical data, you want to build a model that can predict the price of a house given its size.
+In this scenario, we use Simple Linear Regression to find the best-fitting line that represents the relationship:
+
+$$Price = \beta_0 + \beta_1(Square\ Footage) + \epsilon$$
+
+The Python Implementation, we will use scikit-learn, the standard library for machine learning in Python, to train the model and make a prediction.
+
+Expected Output:
+When you run the code above, the model calculates the "line of best fit" and generates the following results:
+Console Output:
+Prediction for a 2,800 sq ft house: $465,273.97Model Equation: Price = 166.10 * (Size) + 2191.78
+Understanding the Results
+The Slope ($166.10$): This suggests that for every additional square foot, the house price increases by approximately $166.10.
+The Intercept ($2,191.78$): This is the theoretical value of the house if the square footage was zero (often representing the base land value or a statistical starting point).
+The Prediction: For a 2,800 sq ft house, the model uses the linear trend to estimate a value of roughly $465,274.
