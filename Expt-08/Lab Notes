@@ -1,0 +1,28 @@
+Problem Statement: Air Conditioner Temperature Control
+Imagine you are designing a "smart" air conditioner. Traditional logic (Boolean logic) is binary: the AC is either ON or OFF, or the room is COLD ($<20$°C) or HOT ($\ge20$°C). 
+This causes jerky temperature swings.
+Fuzzy Logic allows for degrees of truth. Instead of a room being strictly "Hot" or "Cold," it can be "Slightly Warm" or "Very Cold." 
+This is represented by Membership Functions, where a value belongs to a set by a degree between 0 and 1.
+
+The Python Implementation
+We use the scikit-fuzzy library to define how "Cold," "Comfortable," and "Hot" overlap.
+
+Expected Output
+Unlike a standard "if-else" statement, the output shows the room exists in multiple states at once.
+
+Console Output:
+
+At 24°C, the room is:
+
+Cold: 0.00
+
+Comfortable: 0.75
+
+Hot: 0.07
+
+Understanding the Results:
+Partial Membership: At 24°C, the room isn't just one thing. It is 75% Comfortable and 7% Hot. It has 0% membership in the Cold set.
+The "Fuzzy" Boundary: Between 20°C and 30°C, the sets overlap. This allows the AC to say, "I should blow a little bit of cool air" rather than "BLAST FULL COLD" or "STAY OFF."
+Applications: 
+This logic is used in washing machines (to sense dirtiness), anti-lock braking systems (ABS), and even rice cookers to ensure smooth transitions in power.
+Linguistic Variables: Fuzzy sets allow computers to process human-like concepts like "Warm" or "Fast" rather than just $1$s and $0$s.
